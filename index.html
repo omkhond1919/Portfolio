@@ -1,56 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om Khond - Portfolio</title>
-    <link rel="stylesheet" href="https://omkhond1919.github.io/Portfolio/style.css"> <!-- Link to your CSS file for styling -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Khond | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Om Khond | Web Developer | Designer | Creator</p>
-    </header>
 
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <img src="https://omkhond1919.github.io/Portfolio/me.png" alt="Your Photo" class="profile-img">
-        <p>Hello! I'm Om Khond, a passionate web developer with experience in building dynamic websites and web applications. I love creating user-friendly designs and writing clean, efficient code. My goal is to deliver high-quality digital experiences to clients and users alike.</p>
-        <p>I specialize in HTML, CSS, JavaScript, and various web frameworks </p>
-    </section>
+<div id="particles-js"></div>
 
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to work together or just want to say hello, feel free to reach out!</p>
-	<p>You can also reach me directly via email: <a href="mailto:omkhond1919@gmail.com">omkhond1919@gmail.com</a></p>
+<header>
+    <nav class="navbar">
+        <div class="logo">Om Khond</div>
 
-        
-        <div class="resume-download">
-            <a href="https://omkhond1919.github.io/Portfolio/om_khond_Resume.pdf" download="Om_Khond_Resume" class="download-btn">Download My Resume</a>
-        </div>
-    </section>
-
-    
-    <footer>
-        <p>&copy; 2025 Om Khond. All rights reserved.</p>
-        <ul>
-            <li><a href="www.linkedin.com/in/om-khond-439954286" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/omkhond1919" target="_blank">GitHub</a></li>
-            <li><a href="https://x.com/omkhond335761" target="_blank">Twitter</a></li>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </footer>
-</body>
 
+        <div class="nav-right">
+            <button id="theme-toggle">🌙</button>
+            <div class="hamburger">&#9776;</div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Hi, I'm <span class="highlight">Om Khond</span></h1>
+        <p>Web Developer | Designer | Creator</p>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Hire Me</a>
+            <a href="om_khond_Resume.pdf" download class="btn-outline">Resume</a>
+        </div>
+    </div>
+</header>
+
+<section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <img src="me.png" class="profile-img">
+    <p>
+        Passionate web developer building clean, responsive and modern digital experiences.
+        I enjoy creating smooth UI interactions and elegant layouts.
+    </p>
+</section>
+
+<section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="experience-card">
+        <h3>Frontend Developer Intern</h3>
+        <p>Built responsive UI systems and optimized performance for modern web apps.</p>
+    </div>
+</section>
+
+<section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: omkhond1919@gmail.com</p>
+</section>
+
+<footer>
+    <p>© 2026 Om Khond</p>
+    <div class="socials">
+        <a href="https://github.com/omkhond1919" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://x.com" target="_blank" class="social-btn">Twitter</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({ duration: 1000 });
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+/* Properly destroy old particles before reloading */
+function loadParticles(color) {
+
+    if (window.pJSDom && window.pJSDom.length > 0) {
+        window.pJSDom[0].pJS.fn.vendors.destroypJS();
+        window.pJSDom = [];
+    }
+
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 70 },
+            color: { value: color },
+            shape: { type: "circle" },
+            opacity: { value: 0.6 },
+            size: { value: 4, random: true },
+            line_linked: {
+                enable: true,
+                distance: 170,
+                color: color,
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1.2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out"
+            }
+        },
+        interactivity: {
+            detect_on: "window",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "grab"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                }
+            },
+            modes: {
+                repulse: {
+                    distance: 120,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 5
+                }
+            }
+        },
+        retina_detect: true
+    });
+}
+
+/* Load default dark mode particles */
+loadParticles("#ffffff");
+
+/* Theme toggle */
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+        toggle.textContent = "☀️";
+        loadParticles("#000000");
+    } else {
+        toggle.textContent = "🌙";
+        loadParticles("#ffffff");
+    }
+});
+</script>
+
+
+</body>
 </html>
