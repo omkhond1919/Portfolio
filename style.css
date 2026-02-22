@@ -229,6 +229,39 @@ body.light-mode section:hover {
     margin: 8px 0;
 }
 
+/* === PROJECTS SECTION === */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.project-card {
+    padding: 25px;
+    border-radius: 15px;
+    width: 250px;
+    background: rgba(127,90,240,0.1);
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(127,90,240,0.4);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 /* === FOOTER === */
 footer {
     text-align: center;
@@ -284,7 +317,8 @@ footer {
         font-size: 34px;
     }
 
-    .skills-container {
+    .skills-container,
+    .projects-container {
         flex-direction: column;
         align-items: center;
     }
