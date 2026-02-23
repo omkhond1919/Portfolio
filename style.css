@@ -246,6 +246,25 @@ body.light-mode section:hover {
     transition: 0.3s ease;
     text-align: center;
 }
+.tech-tags {
+    margin-bottom: 15px;
+}
+
+.tech-tags span {
+    font-size: 12px;
+    background: rgba(127,90,240,0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 4px;
+    display: inline-block;
+}
+
+.status-badge {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffb703;
+}
 
 .project-card:hover {
     transform: translateY(-6px);
